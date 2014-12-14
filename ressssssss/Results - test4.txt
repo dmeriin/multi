@@ -1,0 +1,85 @@
+ Test 4
+
+ n= 1 w=1000
+ serial
+ count: 142464
+time: 2149
+66 pkts / ms
+Multicore execution finished.
+
+ 
+Parallel 
+count: 770013
+time: 2001
+384 pkts / ms
+Multicore execution finished.
+
+ n= 1 w=6000
+ serial
+ count: 156197
+time: 2000
+78 pkts / ms
+Multicore execution finished.
+
+ 
+Parallel 
+count: 143700
+time: 2000
+71 pkts / ms
+Multicore execution finished.
+
+ n= 8 w=1000
+ serial
+ count: 889952
+time: 2001
+444 pkts / ms
+Multicore execution finished.
+
+ 
+Parallel 
+count: 2562984
+time: 2003
+1279 pkts / ms
+Multicore execution finished.
+
+ n= 8 w=6000
+ serial
+ count: 155944
+time: 2000
+77 pkts / ms
+Multicore execution finished.
+
+ 
+Parallel 
+count: 655896
+time: 2001
+327 pkts / ms
+Multicore execution finished.
+
+ n= 64 w=1000
+ serial
+ count: 896512
+time: 2000
+448 pkts / ms
+Multicore execution finished.
+
+ 
+Parallel 
+count: 458368
+time: 2122
+216 pkts / ms
+Multicore execution finished.
+
+ n= 64 w=6000
+ serial
+ count: 156544
+time: 2001
+78 pkts / ms
+Multicore execution finished.
+
+ 
+Parallel 
+count: 343808
+time: 2113
+162 pkts / ms
+Multicore execution finished.

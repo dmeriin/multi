@@ -1,0 +1,279 @@
+ RESULTS
+ Test1
+ 
+ N = 1 , W = 25
+ Serial
+ count: 10756620
+time: 2000
+5378 pkts / ms
+Multicore execution finished.
+
+ SerialQueue
+ count: 9683143
+time: 2001
+4839 pkts / ms
+Multicore execution finished.
+
+ N = 1 , W = 200
+ Serial
+ count: 3631041
+time: 2001
+1814 pkts / ms
+Multicore execution finished.
+
+ SerialQueue
+ count: 3523823
+time: 2000
+1761 pkts / ms
+Multicore execution finished.
+
+ N = 1 , W = 800
+ Serial
+ count: 1100098
+time: 2000
+550 pkts / ms
+Multicore execution finished.
+
+ SerialQueue
+ 
+ count: 1086159
+time: 2001
+542 pkts / ms
+Multicore execution finished.
+
+ 
+ N = 4 , W = 25
+ Serial
+ count: 10940660
+time: 2000
+5470 pkts / ms
+Multicore execution finished.
+
+ 
+ SerialQueue
+ count: 9668416
+time: 2000
+4834 pkts / ms
+Multicore execution finished.
+
+ 
+ N = 4 , W = 200
+ Serial
+ count: 3649216
+time: 2000
+1824 pkts / ms
+Multicore execution finished.
+
+ SerialQueue
+ count: 3524908
+time: 2000
+1762 pkts / ms
+Multicore execution finished.
+
+ 
+ N = 4 , W = 800
+ Serial
+ count: 1100188
+time: 2000
+550 pkts / ms
+Multicore execution finished.
+
+ 
+ SerialQueue
+ count: 1088068
+time: 2000
+544 pkts / ms
+Multicore execution finished.
+
+ 
+ N = 10 , W = 25
+ Serial
+ count: 10885930
+time: 2000
+5442 pkts / ms
+Multicore execution finished.
+
+ SerialQueue
+ count: 9735800
+time: 2000
+4867 pkts / ms
+Multicore execution finished.
+
+ 
+ 
+ N = 10 , W = 200
+ Serial
+ count: 3643470
+time: 2000
+1821 pkts / ms
+Multicore execution finished.
+
+ SerialQueue
+ count: 3517980
+time: 2000
+1758 pkts / ms
+Multicore execution finished.
+
+ 
+ N = 10 , W = 800
+ Serial
+ count: 1098520
+time: 2000
+549 pkts / ms
+Multicore execution finished.
+
+ SerialQueue
+ count: 1085660
+time: 2000
+542 pkts / ms
+Multicore execution finished.
+
+ 
+ 
+ 
+ Test 2 
+ 
+ N = 1 W = 1
+ Parallel 
+ count: 3946506
+time: 2000
+1973 pkts / ms
+Multicore execution finished.
+
+ 
+ N = 4 W = 1
+ Parallel 
+ count: 2185544
+time: 2002
+1091 pkts / ms
+Multicore execution finished.
+
+ N = 10 W = 1
+ Parallel 
+ 
+ count: 1897380
+time: 2002
+947 pkts / ms
+Multicore execution finished.
+
+ 
+ Test 3
+
+ n= 1 w=1000
+ serial
+ count: 891889
+time: 2000
+445 pkts / ms
+Multicore execution finished.
+
+ 
+ 
+Parallel 
+count: 767474
+time: 2001
+383 pkts / ms
+Multicore execution finished.
+
+ n= 1 w=6000
+ serial
+ count: 156262
+time: 2001
+78 pkts / ms
+Multicore execution finished.
+
+ 
+ 
+Parallel 
+count: 144512
+time: 2000
+72 pkts / ms
+Multicore execution finished.
+
+
+ n= 4 w=1000
+ serial
+ count: 891852
+time: 2000
+445 pkts / ms
+Multicore execution finished.
+
+Parallel 
+count: 1574608
+time: 2002
+786 pkts / ms
+Multicore execution finished.
+
+
+ n= 4 w=6000
+ serial
+ count: 156052
+time: 2001
+77 pkts / ms
+Multicore execution finished.
+
+Parallel 
+count: 295868
+time: 2001
+147 pkts / ms
+Multicore execution finished.
+
+ n= 10 w=1000
+ serial
+ count: 892950
+time: 2000
+446 pkts / ms
+Multicore execution finished.
+
+ 
+ 
+Parallel 
+count: 2501900
+time: 2006
+1247 pkts / ms
+Multicore execution finished.
+
+
+ n= 10 w=6000
+ serial
+ count: 156230
+time: 2000
+78 pkts / ms
+Multicore execution finished.
+
+ 
+ 
+Parallel 
+ count: 711900
+time: 2003
+355 pkts / ms
+Multicore execution finished.
+
+ 
+  Test 4
+
+ n= 1 w=1000
+ serial
+Parallel 
+
+ n= 1 w=6000
+ serial
+Parallel 
+
+ n= 8 w=1000
+ serial
+Parallel 
+
+ n= 8 w=6000
+ serial
+Parallel 
+
+ n= 64 w=1000
+ serial
+Parallel 
+
+ n= 64 w=6000
+ serial
+Parallel 
+ 
+ 
+ 
