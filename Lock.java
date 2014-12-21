@@ -46,8 +46,8 @@ class Backoff { // helper class for the BackoffLock
 
 class BackoffLock implements Lock {
   private AtomicBoolean state = new AtomicBoolean(false);
-  private static final int MIN_DELAY = 6193; // You should tune these parameters...
-  private static final int MAX_DELAY = 100000000;
+  private static final int MIN_DELAY = 6000; // You should tune these parameters...
+  private static final int MAX_DELAY = 1000000;
   public void lock() {
     while(state.get()) {;} // try to get the lock once before allocating a new Backoff(...)
     if(!state.getAndSet(true)) {
