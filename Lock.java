@@ -1,6 +1,5 @@
 import java.util.concurrent.atomic.*;
 import java.util.Random;
-import java.util.concurrent.locks.ReentrantLock;
 
 public interface Lock {
   public void lock();
@@ -83,6 +82,112 @@ class BackoffLock implements Lock {
   }
 }
 
+
+class QNode{
+
+  public boolean locked = false;
+  QNode next = null;
+}
+
+
+class CLHLock implements Lock {
+ AtomicReference<QNode> tail = new AtomicReference<QNode>(new QNode());
+ ThreadLocal<QNode> myPred;
+ ThreadLocal<QNode> myNode;
+ public CLHLock() {
+	 tail = new AtomicReference<QNode>(new QNode());
+	 myNode = new ThreadLocal<QNode>() {
+		 protected QNode initialValue() {
+		 return new QNode();
+		 }
+	 };
+	 myPred = new ThreadLocal<QNode>() {
+		 protected QNode initialValue() {
+		 return null;
+		 }
+	 };
+ }
+ 
+ @Override
+ public void lock()
+ {
+  QNode qnode = myNode.get();
+  qnode.locked = true;
+  QNode pred = tail.getAndSet(qnode);
+  myPred.set(pred);
+  while (pred.locked) {}
+ }
+ 
+ @Override
+ public void unlock() 
+ {
+  QNode qnode = myNode.get();
+  qnode.locked = false;
+  myNode.set(myPred.get());
+ }
+@Override
+ public boolean tryLock() {
+	QNode pred = tail.get();
+	  if (pred.locked == false){
+		  this.lock();
+		  return true;
+	  }
+	  else 
+		  return false;
+ }
+}
+
+
+class MCSLock implements Lock {
+ AtomicReference<QNode> tail;
+ ThreadLocal<QNode> myNode;
+ public MCSLock() {
+	 tail = new AtomicReference<QNode>(null);
+	 myNode = new ThreadLocal<QNode>() {
+		 protected QNode initialValue() {
+			 return new QNode();
+		 }
+	 };
+ }
+ 
+ @Override
+ public void lock() {
+	  QNode qnode = myNode.get();
+	  QNode pred = tail.getAndSet(qnode);
+	  if (pred != null) {
+		  qnode.locked = true;
+		  pred.next = qnode;
+	  // wait until predecessor gives up the lock
+		  while (qnode.locked) {}
+	  }
+ }
+ @Override
+ public void unlock() {
+	  QNode qnode = myNode.get();
+	  if (qnode.next == null) {
+		  if (tail.compareAndSet(qnode, null))
+			  return;
+	  // wait until successor fills in its next field
+		  while (qnode.next == null) {}
+	  }
+	  qnode.next.locked = false;
+	  qnode.next = null;
+ }
+
+	@Override
+	public boolean tryLock() {
+		QNode pred = tail.get();
+		if(pred==null){
+			this.lock();
+			return true;
+		}
+		else
+		return false;
+	}
+ 
+}
+
+
 class LockAllocator {
   public Lock getLock(int lockType) {
     return getLock(lockType, 128);
@@ -105,8 +210,8 @@ class LockAllocator {
     else {
       System.out.println("This is not a valid lockType:");
       System.out.println(lockType);
-      throw new Exception("not a valid lockType");
-    }
+      System.out.println("return null");
+      lock=null;    }
     return lock;
   }
   

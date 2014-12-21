@@ -78,3 +78,9 @@ Temporary Items
 /SerialPacket.class
 /SoloCounterWorker.class
 /TASLock.class
+/CLHLock$1.class
+/CLHLock$2.class
+/CLHLock.class
+/MCSLock$1.class
+/MCSLock.class
+/QNode.class
