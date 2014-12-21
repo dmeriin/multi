@@ -72,6 +72,7 @@ Temporary Items
 /LockAllocator.class
 /ParallelCounter.class
 /ParallelPacket.class
+<<<<<<< HEAD
 /SerialCounter.class
 /SerialPacket.class
 /SoloCounterWorker.class
@@ -84,3 +85,11 @@ Temporary Items
 /MCSLock$LockAllocator.class
 /MCSLock.class
 /MCSLock$1.class
+=======
+/ParallelPacketWorker_LastQueue.class
+/ParallelPacketWorker_RandomQueue.class
+/SerialCounter.class
+/SerialPacket.class
+/SoloCounterWorker.class
+/TASLock.class
+>>>>>>> origin/master

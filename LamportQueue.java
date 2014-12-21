@@ -8,9 +8,12 @@ public class LamportQueue<T> {
 
 volatile int head=0,tail=0;
 T[] items;
-public LamportQueue(int capacity) {
+Lock lock;
+
+public LamportQueue(int capacity, Lock lock) {
 items = (T[])new Object[capacity];
 head=0;tail=0;
+this.lock = lock;
 }
 public void enq(T x) throws FullException {
 if (tail - head == items.length)

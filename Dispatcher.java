@@ -8,6 +8,7 @@ public class Dispatcher implements Runnable {
 	final int numSources;
 	final boolean uniformBool;
 	final LamportQueue<Packet>[] queues;
+	long totalPackets = 0;
 	
 	public Dispatcher(
 		    PaddedPrimitiveNonVolatile<Boolean> done, 
@@ -39,6 +40,7 @@ public class Dispatcher implements Runnable {
 	        	try {
 	        		queues[i].enq(tmp);
 	        		isEnqueued = true;
+	        		totalPackets++;
 	        	 } catch (FullException e) {continue;}
 	        	
 	        }

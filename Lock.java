@@ -83,6 +83,7 @@ class BackoffLock implements Lock {
   }
 }
 
+<<<<<<< HEAD
 class QNode{
 
   public boolean locked = false;
@@ -187,6 +188,8 @@ class MCSLock implements Lock {
  
 }
 
+=======
+>>>>>>> origin/master
 class LockAllocator {
   public Lock getLock(int lockType) {
     return getLock(lockType, 128);
@@ -209,7 +212,11 @@ class LockAllocator {
     else {
       System.out.println("This is not a valid lockType:");
       System.out.println(lockType);
+<<<<<<< HEAD
       lock = new ReentrantWrapperLock();
+=======
+      throw new Exception("not a valid lockType");
+>>>>>>> origin/master
     }
     return lock;
   }
