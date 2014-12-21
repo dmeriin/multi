@@ -51,37 +51,7 @@ class ParallelPacket {
     
     StopWatch timer = new StopWatch();
     PacketSource pkt = new PacketSource(mean, numSources, experimentNumber);
-<<<<<<< HEAD
-    // 
-    // Allocate and initialize locks and any signals used to marshal threads (eg. done signals)
-    // 
-    // Allocate and initialize Dispatcher and Worker threads
-    //
-    // call .start() on your Workers
-    //
-    timer.startTimer();
-    // 
-    // call .start() on your Dispatcher
-    // 
-    try {
-      Thread.sleep(numMilliseconds);
-    } catch (InterruptedException ignore) {;}
-    // 
-    // assert signals to stop Dispatcher - remember, Dispatcher needs to deliver an 
-    // equal number of packets from each source
-    //
-    // call .join() on Dispatcher
-    //
-    // assert signals to stop Workers - they are responsible for leaving the queues
-    // empty - use whatever protocol you like, but one easy one is to have each
-    // worker verify that it's corresponding queue is empty after it observes the
-    // done signal set to true
-    //
-    // call .join() for each Worker
-    timer.stopTimer();
-    final long totalCount = dispatchData.totalPackets;
-=======
-    
+
     LockAllocator la = new LockAllocator();
 
     final LamportQueue<Packet>[] queues = (LamportQueue<Packet>[]) new LamportQueue[numSources] ;
@@ -154,7 +124,6 @@ class ParallelPacket {
     timer.stopTimer();
 
     final long totalCount = dispatcher.totalPackets;
->>>>>>> origin/master
     System.out.println("count: " + totalCount);
     System.out.println("time: " + timer.getElapsedTime());
     System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");

@@ -84,3 +84,5 @@ Temporary Items
 /MCSLock$1.class
 /MCSLock.class
 /QNode.class
+/ParallelPacketWorker_HomeQueue.class
+/ParallelPacketWorker_LockFree.class
