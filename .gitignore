@@ -64,3 +64,17 @@ Temporary Items
 /StopWatch.class
 /UniformGenerator.class
 /SerialFirewall1.class
+/Backoff.class
+/BackoffLock.class
+/CounterStruct.class
+/CounterWorker.class
+/Lock.class
+/LockAllocator.class
+/ParallelCounter.class
+/ParallelPacket.class
+/ParallelPacketWorker_LastQueue.class
+/ParallelPacketWorker_RandomQueue.class
+/SerialCounter.class
+/SerialPacket.class
+/SoloCounterWorker.class
+/TASLock.class
