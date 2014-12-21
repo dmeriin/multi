@@ -153,7 +153,6 @@ public static void test4(){
 	
 	public static void main(String[] args) {
 		
-		SerialFirewall1.main(null);
 	}
 	
 }

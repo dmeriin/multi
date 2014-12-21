@@ -1,8 +1,5 @@
 
 
-
-
-
 class PaddedPrimitive<T> {
   private long[] pad1;
   volatile T value;

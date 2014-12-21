@@ -1,7 +1,4 @@
 
-
-
-
 // from java.util.Random
 class Fingerprint {
   final long m = (long) 0xFFFFFFFFFFFFL;
