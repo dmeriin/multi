@@ -1,0 +1,225 @@
+Test Number 2
+
+
+TASLock
+count: 97103724
+time: 2000
+48551 inc / ms
+0.0
+
+BackoffLock
+count: 89918539
+time: 2002
+44914 inc / ms
+0.0
+
+CLHLock
+count: 26381844
+time: 2000
+13190 inc / ms
+0.0
+
+MCSLock
+count: 49863129
+time: 2000
+24931 inc / ms
+0.0
+
+TASLock
+count: 1112441
+time: 2000
+556 inc / ms
+127449.87560127805
+
+BackoffLock
+count: 57437608
+time: 2000
+28718 inc / ms
+6714149.43089093
+
+CLHLock
+count: 22642548
+time: 2001
+11315 inc / ms
+0.0
+
+MCSLock
+count: 1497443
+time: 2000
+748 inc / ms
+175090.45757363178
+
+TASLock
+count: 237343
+time: 2000
+118 inc / ms
+3679.564816625207
+
+BackoffLock
+count: 10875502
+time: 2001
+5435 inc / ms
+166003.43793762478
+
+CLHLock
+count: 2573029
+time: 2004
+1283 inc / ms
+39889.23756962811
+
+MCSLock
+count: 2303025
+time: 2007
+1147 inc / ms
+35703.519934570344
+
+************end of Test run Number: 0***********
+
+TASLock
+count: 69348013
+time: 2000
+34674 inc / ms
+0.0
+
+BackoffLock
+count: 72657696
+time: 2000
+36328 inc / ms
+0.0
+
+CLHLock
+count: 25044789
+time: 2001
+12516 inc / ms
+0.0
+
+MCSLock
+count: 48670871
+time: 2000
+24335 inc / ms
+0.0
+
+TASLock
+count: 1277980
+time: 2000
+638 inc / ms
+148744.11789073795
+
+BackoffLock
+count: 58054001
+time: 2000
+29027 inc / ms
+6757813.472311697
+
+CLHLock
+count: 24654799
+time: 2000
+12327 inc / ms
+0.0
+
+MCSLock
+count: 3430248
+time: 2000
+1715 inc / ms
+401088.834401277
+
+TASLock
+count: 248220
+time: 2003
+123 inc / ms
+3848.1643566156768
+
+BackoffLock
+count: 25700543
+time: 2000
+12850 inc / ms
+395953.4928640702
+
+CLHLock
+count: 2382494
+time: 2000
+1191 inc / ms
+36935.48409309679
+
+MCSLock
+count: 2268204
+time: 2000
+1134 inc / ms
+35163.70913525656
+
+************end of Test run Number: 1***********
+
+TASLock
+count: 69348865
+time: 2000
+34674 inc / ms
+0.0
+
+BackoffLock
+count: 72670487
+time: 2000
+36335 inc / ms
+0.0
+
+CLHLock
+count: 24920293
+time: 2000
+12460 inc / ms
+0.0
+
+MCSLock
+count: 48764834
+time: 2000
+24382 inc / ms
+0.0
+
+TASLock
+count: 904295
+time: 2000
+452 inc / ms
+105548.85529578234
+
+BackoffLock
+count: 20151601
+time: 2002
+10065 inc / ms
+2321116.057466032
+
+CLHLock
+count: 24920933
+time: 2000
+12460 inc / ms
+0.0
+
+MCSLock
+count: 3810553
+time: 2000
+1905 inc / ms
+445556.6768462585
+
+TASLock
+count: 260863
+time: 2004
+130 inc / ms
+4042.8537780149995
+
+BackoffLock
+count: 22588975
+time: 2000
+11294 inc / ms
+349050.1981984671
+
+CLHLock
+count: 2413362
+time: 2000
+1206 inc / ms
+37414.01366776804
+
+MCSLock
+count: 2021603
+time: 2000
+1010 inc / ms
+31340.789514147807
+
+
+************end of Test run Number: 2***********

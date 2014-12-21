@@ -1,0 +1,45 @@
+beckOff tuning :
+
+BackoffLock
+count: 8826384
+time: 2001
+4410 inc / ms
+268335.48160344275
+Multicore execution finished.
+
+
+
+BackoffLock
+count: 18095125
+time: 2004
+9029 inc / ms
+555982.7031039415
+Multicore execution finished.
+
+
+best tune min value = 6000 max value = 1000000
+BackoffLockBackoffLock
+count: 22545083
+time: 2001
+11266 inc / ms
+692679.22042608
+Multicore execution finished.
+
+
+BackoffLock
+count: 19591805
+time: 2000
+9795 inc / ms
+601578.5500248264
+Multicore execution finished.
+
+
+
+count: 16433407
+time: 2000
+8216 inc / ms
+503454.83700933075
+Multicore execution finished.
+
+
+
