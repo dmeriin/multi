@@ -1,6 +1,3 @@
-
-
-
 import java.util.zip.CRC32;
 import java.util.zip.Checksum;
 import java.lang.Object;
