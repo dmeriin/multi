@@ -85,8 +85,8 @@ class BackoffLock implements Lock {
 
 class QNode{
 
-  public boolean locked = false;
-  QNode next = null;
+  public volatile boolean locked = false;
+  volatile QNode next = null;
 }
 
 
