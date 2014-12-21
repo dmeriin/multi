@@ -1,0 +1,21 @@
+TASLock
+count: 483632
+time: 2002
+241 inc / ms
+14812.6750199312
+BackoffLock
+count: 8438841
+time: 2001
+4217 inc / ms
+255377.68838503642
+CLHLock
+count: 2302096
+time: 2001
+1150 inc / ms
+70808.48996045932
+MCSLock
+count: 1926279
+time: 2000
+963 inc / ms
+59249.16808197605
+Multicore execution finished.

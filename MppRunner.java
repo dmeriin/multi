@@ -38,7 +38,7 @@ public class MppRunner {
 		*/
 		
 		String[][] test3 = new String[][]
-				{ {TIME_TO_RUN,"32","0"},{TIME_TO_RUN,"32","1"},{TIME_TO_RUN,"32","4"},{TIME_TO_RUN,"32","5"}};
+				{ {TIME_TO_RUN,"4","0"},{TIME_TO_RUN,"4","1"},{TIME_TO_RUN,"4","4"},{TIME_TO_RUN,"4","5"}};
 		
 		
 		for (int i =0 ; i < 4 ; i ++){
