@@ -1,0 +1,96 @@
+test Number 1
+
+Serial :
+
+count: 294841074
+time: 2000
+147420 inc / ms
+
+TASLock :
+
+count: 97108270
+time: 2000
+48554 inc / ms
+0.0
+
+BackoffLock :
+count: 91566724
+time: 2000
+45783 inc / ms
+0.0
+
+CLHLock :
+count: 26111414
+time: 2000
+13055 inc / ms
+0.0
+MCSLock
+count: 49673419
+time: 2000
+24836 inc / ms
+0.0
+
+test run number: 0
+
+Serial :
+count: 296060600
+time: 2001
+147956 inc / ms
+
+TASLock :
+count: 68744369
+time: 2000
+34372 inc / ms
+0.0
+BackoffLock
+count: 75939778
+time: 2000
+37969 inc / ms
+0.0
+
+CLHLock :
+count: 24888375
+time: 2001
+12437 inc / ms
+0.0
+
+MCSLock : 
+count: 48581366
+time: 2000
+24290 inc / ms
+0.0
+
+test run number: 1
+
+Serial : 
+count: 299062218
+time: 2001
+149456 inc / ms
+
+TASLock : 
+count: 69342280
+time: 2000
+34671 inc / ms
+0.0
+
+BackoffLock : 
+count: 60309813
+time: 2000
+30154 inc / ms
+0.0
+
+CLHLock :
+count: 24804564
+time: 2000
+12402 inc / ms
+0.0
+
+MCSLock :
+count: 48831573
+time: 2000
+24415 inc / ms
+0.0
+
+test run number: 2
+
+Multicore execution finished.
