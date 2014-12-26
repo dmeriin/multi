@@ -95,7 +95,6 @@ class SerialQueuePacketWorker implements PacketWorker {
 	  long totalPackets = 0;
 	  final int numSources;
 	  final LamportQueue<Packet> queue;
-	  // Also all lamport queues.
 	  public ParallelPacketWorker_LockFree(
 	    PaddedPrimitiveNonVolatile<Boolean> done, 
 	    int numSources,
@@ -136,7 +135,6 @@ class SerialQueuePacketWorker implements PacketWorker {
 	  long totalPackets = 0;
 	  final int numSources;
 	  final LamportQueue<Packet> queue;
-	  // Also all lamport queues.
 	  public ParallelPacketWorker_HomeQueue(
 	    PaddedPrimitiveNonVolatile<Boolean> done, 
 	    int numSources,
@@ -236,10 +234,11 @@ class SerialQueuePacketWorker implements PacketWorker {
 	  long fingerprint = 0;
 	  long totalPackets = 0;
 	  final int numSources;
+	  // All lamport queues.
 	  final LamportQueue<Packet>[] queues;
 	  final RandomGenerator rand;
 	  
-	  // Also all lamport queues.
+	
 	  public ParallelPacketWorker_LastQueue(
 	    PaddedPrimitiveNonVolatile<Boolean> done, 
 	    int numSources,
