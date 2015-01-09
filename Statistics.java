@@ -1,32 +1,20 @@
 
 public class Statistics {
 
-  
-  public static double getStdDev(long[] count) {  // calculates the std dev of an array
-	  												// of longs
-
-	    double sum = 0;
-
-	    double sumSquared = 0;
-
-	    for(int i = 0; i < count.length; i++) {
-
-	      sum += (double) count[i];
-
-	      sumSquared += (double) (count[i]*count[i]);
-
-	    }
-
-	    double exp = sum / (double) count.length;
-
-	    double expSq = sumSquared / (double) count.length;
-
-	    return Math.sqrt(expSq-exp*exp);
-
+  public static double getStdDev(long[] count) {
+    double sum = 0;
+    double sumSquared = 0;
+    for(int i = 0; i < count.length; i++) {
+      sum += (double) count[i];
+      sumSquared += (double) (count[i]*count[i]);
+    }
+    double exp = sum / (double) count.length;
+    double expSq = sumSquared / (double) count.length;
+    return Math.sqrt(expSq-exp*exp);
   }
 
-  public static double getEntropy(long[] count) { // calculates entropy - 
-    double[] p = new double[count.length];        // just for your edification...
+  public static double getEntropy(long[] count) {
+    double[] p = new double[count.length];
     double total = 0;
     double entropy = 0;
     for(int i = 0; i < count.length; i++) {

@@ -47,6 +47,7 @@ class SerialList<T,K> implements BucketList<T,K> {
     else
       return true;
   }
+  @SuppressWarnings("unchecked")
   public boolean remove(K key) {
     if( contains(key) == false )
       return false;
@@ -75,6 +76,7 @@ class SerialList<T,K> implements BucketList<T,K> {
       tmpItem.item = item; // we're overwriting, so the size stays the same
     }
     else {
+      @SuppressWarnings("unchecked")      
       SerialList<T,K>.Iterator<T,K> firstItem = new Iterator<T,K>(key, item, head);
       head = firstItem;
       size++;
@@ -88,6 +90,7 @@ class SerialList<T,K> implements BucketList<T,K> {
   public int getSize() {
     return size;
   }
+  @SuppressWarnings("unchecked")
   public void printList() {
     SerialList<T,K>.Iterator<T,K> iterator = head;
     System.out.println("Size: " + size);

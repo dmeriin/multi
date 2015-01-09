@@ -7,10 +7,10 @@ public interface HashTable<T> {
 }
 
 class SerialHashTable<T> implements HashTable<T> {
-  private SerialList<T,Integer>[] table;
-  private int logSize;
-  private int mask;
-  private final int maxBucketSize;
+  protected SerialList<T,Integer>[] table;
+  protected int logSize;
+  protected int mask;
+  protected final int maxBucketSize;
   @SuppressWarnings("unchecked")
   public SerialHashTable(int logSize, int maxBucketSize) {
     this.logSize = logSize;
@@ -23,7 +23,7 @@ class SerialHashTable<T> implements HashTable<T> {
           && table[key & mask].getSize() >= maxBucketSize )
       resize();
   }
-  private void addNoCheck(int key, T x) {
+  protected void addNoCheck(int key, T x) {
     int index = key & mask;
     if( table[index] == null )
       table[index] = new SerialList<T,Integer>(key,x);
@@ -31,11 +31,10 @@ class SerialHashTable<T> implements HashTable<T> {
       table[index].addNoCheck(key,x);
   }
   public void add(int key, T x) {
-    resizeIfNecessary(key);
     addNoCheck(key,x);
+    resizeIfNecessary(key);
   }
   public boolean remove(int key) {
-    resizeIfNecessary(key);
     if( table[key & mask] != null )
       return table[key & mask].remove(key);
     else
