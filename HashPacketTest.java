@@ -87,7 +87,7 @@ class ParallelHashPacket {
     		table = new OptimisticHash<Packet>(1, maxBucketSize, numWorkers);
     		break;
     	case 2:
-    		table = new LockFreeHash<Packet>(maxBucketSize, 1);
+    		table = new LockFreeHash<Packet>(maxBucketSize);
     		break;
     	case 3:
     		table = new LinearProbeHashTable<Packet>(1, maxBucketSize, numWorkers);
