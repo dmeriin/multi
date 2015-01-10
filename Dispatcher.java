@@ -50,3 +50,47 @@ public class Dispatcher implements Runnable {
 	}
 
 }
+
+
+ class HashDispatcher implements Runnable {
+	PaddedPrimitiveNonVolatile<Boolean> done;
+	 final HashPacketGenerator source;
+	final int numSources;
+	final LamportQueue<HashPacket<Packet>>[] queues;
+	long totalPackets = 0;
+	
+	public HashDispatcher(
+		    PaddedPrimitiveNonVolatile<Boolean> done, 
+		    HashPacketGenerator source,
+		    int numSources,
+		    LamportQueue<HashPacket<Packet>>[] queues){
+		this.done = done;
+	    this.source = source;
+	    this.numSources = numSources;
+	    this.queues = queues;
+		
+	}
+	
+	@Override
+	public void run() {
+		HashPacket<Packet> pkt;
+	    while( !done.value ) {
+	      for( int i = 0; i < numSources; i++ ) {
+	    	boolean isEnqueued = false;  
+	    	
+	    	pkt = source.getRandomPacket();
+	    	
+	        while ( !isEnqueued ){
+	        	try {
+	        		queues[i].enq(pkt);
+	        		isEnqueued = true;
+	        		totalPackets++;
+	        	 } catch (FullException e) {continue;}
+	        	
+	        }
+	      }
+	    }
+
+	}
+
+}

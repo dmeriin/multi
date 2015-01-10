@@ -1,16 +1,5 @@
 
-
-
-
-public class MppRunner {
-	
-	static final String TIME_TO_RUN = "2000";
-	static final String DEPTH = "8";
-	static final int numRunTest = 1;
-	
-	public static void main(String[] args) {
-		
-		/*String[][] test1 = new String[][]
+/*String[][] test1 = new String[][]
 				{{TIME_TO_RUN,"1","0"},{TIME_TO_RUN,"1","1"},{TIME_TO_RUN,"1","4"},{TIME_TO_RUN,"1","5"}};
 		
 		SerialCounter.main(new String[] {TIME_TO_RUN});
@@ -35,7 +24,7 @@ public class MppRunner {
 			ParallelCounter.main(test2[i]);
 		}
 		////////////// END TEST 2 ////////////////////
-		*/
+		
 		
 		String[][] test3 = new String[][]
 				{ {TIME_TO_RUN,"4","0"},{TIME_TO_RUN,"4","1"},{TIME_TO_RUN,"4","4"},{TIME_TO_RUN,"4","5"}};
@@ -47,7 +36,7 @@ public class MppRunner {
 		
 		//////////////END TEST 3 ////////////////////
 		
-		/*
+		
 		///////////// Packet Test ////////////
 	
 		
@@ -184,6 +173,46 @@ public class MppRunner {
 		//////////////END TEST 6 ////////////////////
 		 */
 		 
+
+
+public class MppRunner {
+	
+	static final String TIME_TO_RUN = "2000";
+	static final String DEPTH = "8";
+	static final int numRunTest = 1;
+	
+	public static void main(String[] args) {
+		
+		
+	
+	    
+	    // Serial - {TIME_TO_RUN,fractionAdd,fractionRemove,hitRate,maxBucketSize,mean,initSize}
+	    // Parallel  - {TIME_TO_RUN,fractionAdd,fractionRemove,hitRate,maxBucketSize,mean,initSize,numWorkers,tableType} 
+	    // ParallelNoLoad - {TIME_TO_RUN,fractionAdd,fractionRemove,hitRate,maxBucketSize,mean,initSize,numWorkers} 
+	    
+		String[][] TestSerial = new String[][] {{TIME_TO_RUN,"0.09","0.01","0.9","8","4000","0"}};
+		
+		//SerialHashPacket.main(TestSerial[0]);
+		
+		String[][] TestParallel_Drop = new String[][] {{TIME_TO_RUN,"0.09","0.01","0.9","8","4000","0","4"}};
+		
+		//ParallelHashPacket_Drop.main(TestParallel_Drop[0]);
+		
+		String[][] TestParallel = new String[][] {{TIME_TO_RUN,"0.09","0.01","0.9","8","4000","0","4","0"}};
+		
+		ParallelHashPacket.main(TestParallel[0]);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

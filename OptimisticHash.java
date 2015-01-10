@@ -1,8 +1,8 @@
 
 public class OptimisticHash<T> extends LockingHashTable<T> {
 
-	public OptimisticHash(int logSize, int maxBucketSize) {
-		super(logSize, maxBucketSize);
+	public OptimisticHash(int logSize, int maxBucketSize,int numThreads) {
+		super(logSize, maxBucketSize,numThreads);
 	}
 	
 	@Override

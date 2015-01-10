@@ -4,41 +4,55 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class LockingHashTable<T> extends SerialHashTable<T> {
 	final ReentrantReadWriteLock[] locks;
-	public LockingHashTable(int logSize, int maxBucketSize) {
+	public LockingHashTable(int logSize, int maxBucketSize,int numThreads) {
 		super(logSize, maxBucketSize);
-		locks = new ReentrantReadWriteLock[(1 << logSize)];
+		locks = new ReentrantReadWriteLock[numThreads];
 		for (int i = 0 ; i < locks.length ; i ++){
 			locks[i] = new ReentrantReadWriteLock();
 		}
 	}
 	
 	@Override
-	public void addNoCheck(int key, T x){
-		locks[key & this.mask].writeLock().lock();
+	public void add(int key, T x){
+		// If the table is smaller then the size of locks , use only some of the locks.
+		int lockIndex = mask > (locks.length - 1) ? key & (locks.length - 1) : key & mask;  
+		locks[lockIndex].writeLock().lock();
 		try{
-			super.addNoCheck(key, x);
+			addNoCheck(key, x);
+			//If resize is needed
+			if (table[key & mask].getSize() >= maxBucketSize)
+			{
+				locks[lockIndex ].writeLock().unlock();
+				resize();
+			}
 		} finally {
-			locks[key & this.mask ].writeLock().unlock();;
+			//The write lock might have been unlocked in resize earlier.
+			if (locks[lockIndex ].writeLock().isHeldByCurrentThread())
+				locks[lockIndex ].writeLock().unlock();
 		}
 	}
 	
 	@Override
 	public boolean remove(int key) {
-		locks[key & this.mask].writeLock().lock();
+		//If the table is smaller then the size of locks , use only some of the locks.
+		int lockIndex = mask > (locks.length - 1) ? key & (locks.length - 1) : key & mask;  
+		locks[lockIndex].writeLock().lock();
 		try{
 			return super.remove(key);
 		} finally {
-			locks[key & this.mask ].writeLock().unlock();;
+			locks[lockIndex ].writeLock().unlock();
 		}
 	}
 	
 	@Override
     public boolean contains(int key) {
-		locks[key & this.mask].readLock().lock();
+		//If the table is smaller then the size of locks , use only some of the locks.
+		int lockIndex = mask > (locks.length - 1) ? key & (locks.length - 1) : key & mask;
+		locks[lockIndex ].readLock().lock();
 		try{
 			return super.contains(key);
 		} finally {
-			locks[key & this.mask ].readLock().unlock();
+			locks[lockIndex].readLock().unlock();
 		}
 	}
 	

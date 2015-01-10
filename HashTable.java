@@ -28,7 +28,7 @@ class SerialHashTable<T> implements HashTable<T> {
     if( table[index] == null )
       table[index] = new SerialList<T,Integer>(key,x);
     else
-      table[index].addNoCheck(key,x);
+      table[index].add(key,x);
   }
   public void add(int key, T x) {
     addNoCheck(key,x);
