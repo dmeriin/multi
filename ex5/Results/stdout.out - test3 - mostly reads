@@ -1,0 +1,57 @@
+Test 3
+Test 3
+Mostly Reads
+Serial
+211
+218
+219
+Parallel
+Thread 1 - table 0 
+171
+191
+185
+Thread 1 - table 1 
+181
+188
+201
+Thread 1 - table 2 
+193
+200
+206
+Thread 1 - table 3 
+202
+194
+194
+Thread 4 - table 0 
+556
+554
+565
+Thread 4 - table 1 
+581
+602
+578
+Thread 4 - table 2 
+590
+602
+578
+Thread 4 - table 3 
+578
+585
+598
+Thread 10 - table 0 
+950
+1230
+1182
+Thread 10 - table 1 
+1300
+1391
+1228
+Thread 10 - table 2 
+1184
+1379
+1238
+Thread 10 - table 3 
+1299
+1364
+1305
+Multicore execution finished.

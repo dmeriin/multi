@@ -36,9 +36,9 @@ class SerialHashPacket {
     } catch (InterruptedException ignore) {;}      
     timer.stopTimer();
     final long totalCount = workerData.totalPackets;
-    System.out.println("count: " + totalCount);
-    System.out.println("time: " + timer.getElapsedTime());
-    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+    //System.out.println("count: " + totalCount);
+    //System.out.println("time: " + timer.getElapsedTime());
+    System.out.println(totalCount/timer.getElapsedTime() /*+ " pkts / ms"*/);
   }
 }
 
@@ -153,9 +153,9 @@ class ParallelHashPacket {
     timer.stopTimer();
 
     final long totalCount = dispatcher.totalPackets;
-    System.out.println("count: " + totalCount);
-    System.out.println("time: " + timer.getElapsedTime());
-    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+    //System.out.println("count: " + totalCount);
+    //System.out.println("time: " + timer.getElapsedTime());
+    System.out.println(totalCount/timer.getElapsedTime() /*+ " pkts / ms"*/);
   }
 }
 
@@ -240,8 +240,8 @@ class ParallelHashPacket_Drop {
     timer.stopTimer();
 
     final long totalCount = dispatcher.totalPackets;
-    System.out.println("count: " + totalCount);
-    System.out.println("time: " + timer.getElapsedTime());
-    System.out.println(totalCount/timer.getElapsedTime() + " pkts / ms");
+    //System.out.println("count: " + totalCount);
+    //System.out.println("time: " + timer.getElapsedTime());
+    System.out.println(totalCount/timer.getElapsedTime() /*+ " pkts / ms"*/);
   }
 }

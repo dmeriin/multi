@@ -1,0 +1,20 @@
+Test 4
+Serial
+193
+Parallel
+1 thread
+159
+162
+186
+152
+8 thread
+865
+854
+1291
+946
+32 thread
+649
+825
+599
+90
+Multicore execution finished.

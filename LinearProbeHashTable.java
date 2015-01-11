@@ -34,7 +34,7 @@ public class LinearProbeHashTable<T> implements HashTable<T> {
 	public void add(int key, T x) {
 		while (!tryAdd(table,key, x))
 		{
-			resize();
+			resize(table.length);
 		}
 	}
 	// Tries to add the key, return true is add was successful and false if resize is needed.
@@ -149,12 +149,19 @@ public class LinearProbeHashTable<T> implements HashTable<T> {
 	}
 	
 	@SuppressWarnings("unchecked")
-	 public void resize() {
+	 public void resize(int currentLength) {
 			//Lock all locks before starting resize
 			for (ReentrantLock lock : locks){
 				lock.lock();
 			}
 			try{
+				
+				// if resize already happened
+				if (currentLength < table.length)
+				{
+					return;
+				}
+				
 				LinearProbeCell<T>[] newTable = new LinearProbeCell[2*table.length];
 				for ( int i = 0; i < newTable.length; i++ ) {
 					newTable[i] = new LinearProbeCell<T>(NO_KEY, null, 0);

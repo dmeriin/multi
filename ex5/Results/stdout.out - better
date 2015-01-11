@@ -1,0 +1,20 @@
+Test 1
+1399
+Test 2
+Mostly Reads
+Serial
+213
+Parallel
+190
+190
+189
+197
+Heavy Writes
+Serial
+213
+Parallel
+189
+185
+180
+171
+Multicore execution finished.
