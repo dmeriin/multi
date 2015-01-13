@@ -60,8 +60,12 @@ public class LockFreeHash<T> implements HashTable<T>{
 			int bucketSizeNow = (int) Math.pow(2,logSize.get());
 			if (setSizeNow / bucketSizeNow > THRESHOLD)
 				if(bucketSizeNow < this.maxBucketSize)
-					logSize.compareAndSet(logSize.get(), logSize.get()+1);		
+					resize();
 		}
+	}
+
+	private void resize() {
+		logSize.compareAndSet(logSize.get(), logSize.get()+1);		
 	}
 
 	@Override
